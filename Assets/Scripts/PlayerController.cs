@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
 
     public bool isAble;
+    public GameObject prefab;
 
     void Start()
     {
@@ -36,6 +37,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.eulerAngles -= new Vector3(0, rotationSpeed, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject clon;
+            clon = Instantiate(prefab);
+            clon.transform.position = transform.position - new Vector3(0, 0, 0);
+
         }
         
     }
