@@ -39,12 +39,15 @@ public class PlayerController : MonoBehaviour
             transform.eulerAngles -= new Vector3(0, rotationSpeed, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if(this.name == "Player")
         {
-            GameObject clon;
-            clon = Instantiate(prefab);
-            clon.transform.position = transform.position - new Vector3(0, 0, 0);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameObject clon;
+                clon = Instantiate(prefab);
+                clon.transform.position = transform.position - new Vector3(0, 0, 0);
 
+            }
         }
         
     }
